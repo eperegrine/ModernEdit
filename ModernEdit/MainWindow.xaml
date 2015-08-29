@@ -13,12 +13,6 @@
             <dragablz:DragablzIcon />
         </DataTemplate>
     </Controls:MetroWindow.IconTemplate>
-    <Controls:MetroWindow.RightWindowCommands>
-        <Controls:WindowCommands>
-            <Button>New File</Button>
-            <Button>Open File</Button>
-        </Controls:WindowCommands>
-    </Controls:MetroWindow.RightWindowCommands>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_File">
@@ -26,15 +20,15 @@
                 <MenuItem Header="_Open" Command="Open"></MenuItem>
             </MenuItem>
         </Menu>
-        <dragablz:TabablzControl x:Name="TabablzControl" Margin="8">
+        <dragablz:TabablzControl x:Name="TabablzControl" Margin="4 0 4 4">
             <dragablz:TabablzControl.InterTabController>
                 <dragablz:InterTabController InterTabClient="{Binding InterTabClient}"/>
             </dragablz:TabablzControl.InterTabController>
-            <TabItem Header="Tab No. 1" IsSelected="True">
-                <TextBlock>Hello World</TextBlock>
+            <TabItem Header="Example.txt" IsSelected="True">
+                <TextBox>Hi</TextBox>
             </TabItem>
             <TabItem Header="Tab No. 2">
-                <TextBlock>We Have Tearable Tabs!</TextBlock>
+                <TextBox>We Have Tearable Tabs!</TextBox>
             </TabItem>
         </dragablz:TabablzControl>
     </DockPanel>
