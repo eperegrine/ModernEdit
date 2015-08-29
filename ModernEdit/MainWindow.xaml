@@ -16,8 +16,20 @@
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_File">
-                <MenuItem Header="_New" Command="New"></MenuItem>
-                <MenuItem Header="_Open" Command="Open"></MenuItem>
+                <MenuItem Header="_New" Command="New" />
+                <MenuItem Header="_Open" Command="Open" />
+                <MenuItem Header="_Save" Command="Save" />
+                <MenuItem Header="_Save As" Command="SaveAs"/>
+            </MenuItem>
+            <MenuItem Header="_Edit">
+                <MenuItem Header="_Copy" Command="Copy" />
+                <MenuItem Header="_Paste" Command="Paste" />
+                <MenuItem Header="_Cut" Command="Cut" />
+                <MenuItem Header="_Clear" />
+            </MenuItem>
+            <MenuItem Header="_Help">
+                <MenuItem Header="Show Details" />
+                <MenuItem Header="Version -- 0.1" />
             </MenuItem>
         </Menu>
         <dragablz:TabablzControl x:Name="TabablzControl" Margin="4 0 4 4">
