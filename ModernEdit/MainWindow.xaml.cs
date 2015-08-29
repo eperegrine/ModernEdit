@@ -22,6 +22,7 @@ namespace ModernEdit
     /// </summary>
     public partial class MainWindow
     {
+        MyInterTabClient InterTabClient = new MyInterTabClient();
         public MainWindow()
         {
             InitializeComponent();
