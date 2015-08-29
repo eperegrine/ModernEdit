@@ -15,6 +15,7 @@
         </DataTemplate>
     </Controls:MetroWindow.IconTemplate>
     <Window.CommandBindings>
+        <CommandBinding Command="Open" CanExecute="CanOpenFile" Executed="OpenFile" />
         <CommandBinding Command="Commands:WindowCommands.ShowInfo" CanExecute="CanShowInfo" Executed="ShowInfo"/>
     </Window.CommandBindings>
     <DockPanel>
@@ -40,11 +41,8 @@
             <dragablz:TabablzControl.InterTabController>
                 <dragablz:InterTabController InterTabClient="{Binding InterTabClient}"/>
             </dragablz:TabablzControl.InterTabController>
-            <TabItem Header="Example.txt" IsSelected="True">
-                <TextBox>Hi</TextBox>
-            </TabItem>
-            <TabItem Header="Tab No. 2">
-                <TextBox>We Have Tearable Tabs!</TextBox>
+            <TabItem x:Name="FileTab" Header="Example.txt" IsSelected="True">
+                <TextBox x:Name="EditBox">Hi</TextBox>
             </TabItem>
         </dragablz:TabablzControl>
     </DockPanel>

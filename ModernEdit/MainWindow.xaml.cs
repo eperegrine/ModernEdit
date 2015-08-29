@@ -29,11 +29,40 @@ namespace ModernEdit
             InitializeComponent();
         }
 
-        public void CanShowInfo (object sender, CanExecuteRoutedEventArgs e)
+        public List<TabItem> tabItems;
+
+        public void PopulateTabs ()
+        {
+            tabItems.Clear();
+            foreach (TabItem t in TabablzControl.Items)
+            {
+                tabItems.Add(t);
+            }
+        }
+
+        public void SetTabContent(int TabIndex, string Header, string content)
+        {
+            FileTab.Header = Header;
+            EditBox.Text = content;
+        }
+
+        //Open File
+        public void CanOpenFile(object sender, CanExecuteRoutedEventArgs e)
         {
             e.CanExecute = true;
         }
 
+        public void OpenFile(object sender, ExecutedRoutedEventArgs e)
+        {
+            
+            SetTabContent(0, "HelloWorld.py", "print(\"Hello World\")");
+        }
+
+        //Show Info Command
+        public void CanShowInfo (object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = true;
+        }
         public void ShowInfo (object sender, ExecutedRoutedEventArgs e) { ShowInfo(); }
         
         public void ShowInfo ()
