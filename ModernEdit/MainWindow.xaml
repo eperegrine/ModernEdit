@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ModernEdit"
+        xmlns:Commands="clr-namespace:ModernEdit.Commands"
         xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         mc:Ignorable="d"
@@ -13,6 +14,9 @@
             <dragablz:DragablzIcon />
         </DataTemplate>
     </Controls:MetroWindow.IconTemplate>
+    <Window.CommandBindings>
+        <CommandBinding Command="Commands:WindowCommands.ShowInfo" CanExecute="CanShowInfo" Executed="ShowInfo"/>
+    </Window.CommandBindings>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_File">
@@ -28,7 +32,7 @@
                 <MenuItem Header="_Clear" />
             </MenuItem>
             <MenuItem Header="_Help">
-                <MenuItem Header="Show Details" />
+                <MenuItem Header="Show Info" Command="Commands:WindowCommands.ShowInfo" />
                 <MenuItem Header="Version -- 0.1" />
             </MenuItem>
         </Menu>

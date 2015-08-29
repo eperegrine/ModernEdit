@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
 
 namespace ModernEdit
 {
@@ -27,5 +28,18 @@ namespace ModernEdit
         {
             InitializeComponent();
         }
+
+        public void CanShowInfo (object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = true;
+        }
+
+        public void ShowInfo (object sender, ExecutedRoutedEventArgs e) { ShowInfo(); }
+        
+        public void ShowInfo ()
+        {
+            this.ShowMessageAsync("Modern Edit Info", "Version 0.1\nCreated by Tom Peregrine", MessageDialogStyle.Affirmative, null);
+        }
+
     }
 }
