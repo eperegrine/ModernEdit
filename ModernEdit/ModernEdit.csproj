@@ -78,6 +78,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Commands\Commands.cs" />
+    <Compile Include="FileManagement\MEFile.cs" />
     <Compile Include="InterTabClient.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
