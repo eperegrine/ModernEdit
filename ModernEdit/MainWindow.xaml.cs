@@ -16,6 +16,8 @@ using System.Windows.Shapes;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
 
+using ModernEdit.FileManagement;
+
 namespace ModernEdit
 {
     /// <summary>
@@ -54,8 +56,11 @@ namespace ModernEdit
 
         public void OpenFile(object sender, ExecutedRoutedEventArgs e)
         {
-            
-            SetTabContent(0, "HelloWorld.py", "print(\"Hello World\")");
+            MEFile f = FileUtils.OpenFile();
+            if (f != MEFile.ERROR_ME_FILE)
+            {
+                SetTabContent(0, f.Name + f.Extension, f.Content);
+            }
         }
 
         //Show Info Command

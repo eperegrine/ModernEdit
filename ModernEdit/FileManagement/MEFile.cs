@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ModernEdit.FileManagement
 {
-    class MEFile
+    public class MEFile
     {
         public static readonly MEFile ERROR_ME_FILE = new MEFile("ERROR", "ERROR", "ERROR", "ERROR");
 

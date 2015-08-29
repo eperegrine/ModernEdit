@@ -12,7 +12,7 @@ namespace ModernEdit.FileManagement
     {
         public static string TextFileFilter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
 
-        static MEFile OpenFile()
+        public static MEFile OpenFile()
         {
             string content = "";
             // Create OpenFileDialog 
