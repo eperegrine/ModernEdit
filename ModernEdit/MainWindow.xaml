@@ -42,7 +42,7 @@
                 <dragablz:InterTabController InterTabClient="{Binding InterTabClient}"/>
             </dragablz:TabablzControl.InterTabController>
             <TabItem x:Name="FileTab" Header="Example.txt" IsSelected="True">
-                <TextBox x:Name="EditBox">Hi</TextBox>
+                <TextBox x:Name="EditBox" AcceptsReturn="True">Hi</TextBox>
             </TabItem>
         </dragablz:TabablzControl>
     </DockPanel>
