@@ -58,7 +58,8 @@ namespace ModernEdit
 
         public void SaveFile (object sender, ExecutedRoutedEventArgs e)
         {
-            //FileUtils.SaveFile()
+            currentFile.Content = EditBox.Text;
+            FileUtils.SaveFile(currentFile);
         }
 
         //Open File

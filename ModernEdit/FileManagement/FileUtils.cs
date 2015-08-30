@@ -14,6 +14,7 @@ namespace ModernEdit.FileManagement
 
         public static void SaveFile(MEFile file)
         {
+            Console.WriteLine(file.HasBeenSaved());
             if (file.HasBeenSaved())
             {
                 File.WriteAllText(file.CompletePath, file.Content);
