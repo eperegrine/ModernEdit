@@ -10,10 +10,10 @@ namespace ModernEdit.FileManagement
     {
         public static readonly MEFile ERROR_ME_FILE = new MEFile("ERROR", "ERROR", "ERROR", "ERROR");
 
-        public string Name = "MEFile";
-        public string Extension = ".txt";
-        public string Content = "This is an example MEFile";
-        public string CompletePath = @"C:\ModernEdit\Test.txt";
+        public string Name;
+        public string Extension;
+        public string Content;
+        public string CompletePath;
 
         public string NameAndExtension {   get { return Name + Extension; } }
 
@@ -23,6 +23,11 @@ namespace ModernEdit.FileManagement
             Extension = extension;
             Content = content;
             CompletePath = completePath;
+        }
+
+        public bool HasBeenSaved ()
+        {
+            return (this.CompletePath != null && this.CompletePath != ERROR_ME_FILE.CompletePath);
         }
 
         public override bool Equals(object obj)
