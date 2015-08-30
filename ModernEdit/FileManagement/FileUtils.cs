@@ -12,6 +12,18 @@ namespace ModernEdit.FileManagement
     {
         public static string TextFileFilter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
 
+        public static void SaveFile(MEFile file)
+        {
+            if (file.HasBeenSaved())
+            {
+                File.WriteAllText(file.CompletePath, file.Content);
+            }
+            else
+            {
+                //FileUtills.SaveFileAs(file);
+            }
+        }
+
         public static MEFile OpenFile()
         {
             string content = "";
