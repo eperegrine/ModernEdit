@@ -87,7 +87,7 @@ namespace ModernEdit
         
         public void ShowInfo ()
         {
-            this.ShowMessageAsync("Modern Edit Info", "Version 0.1\nCreated by Tom Peregrine", MessageDialogStyle.Affirmative, null);
+            this.ShowMessageAsync("Modern Edit Info", "Beta Release 1.0\n\nCreated by Tom Peregrine", MessageDialogStyle.Affirmative, null);
         }
 
     }

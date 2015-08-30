@@ -35,7 +35,6 @@
             </MenuItem>
             <MenuItem Header="_Help">
                 <MenuItem Header="Show Info" Command="Commands:WindowCommands.ShowInfo" />
-                <MenuItem Header="Version -- 0.1" />
             </MenuItem>
         </Menu>
         <dragablz:TabablzControl x:Name="TabablzControl" Margin="4 0 4 4">
