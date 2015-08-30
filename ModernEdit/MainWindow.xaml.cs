@@ -29,9 +29,11 @@ namespace ModernEdit
         public MainWindow()
         {
             InitializeComponent();
+            currentFile = new MEFile("Example", ".txt", "Hello, World", null);
         }
 
         public List<TabItem> tabItems;
+        MEFile currentFile;
 
         public void PopulateTabs ()
         {
@@ -48,6 +50,17 @@ namespace ModernEdit
             EditBox.Text = content;
         }
 
+        //Save File
+        public void CanSaveFile(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = true; //Do work in future to check for any changes
+        }
+
+        public void SaveFile (object sender, ExecutedRoutedEventArgs e)
+        {
+            //FileUtils.SaveFile()
+        }
+
         //Open File
         public void CanOpenFile(object sender, CanExecuteRoutedEventArgs e)
         {
@@ -60,6 +73,7 @@ namespace ModernEdit
             if (f != MEFile.ERROR_ME_FILE)
             {
                 SetTabContent(0, f.Name + f.Extension, f.Content);
+                currentFile = f;
             }
         }
 

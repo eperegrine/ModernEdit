@@ -16,6 +16,7 @@
     </Controls:MetroWindow.IconTemplate>
     <Window.CommandBindings>
         <CommandBinding Command="Open" CanExecute="CanOpenFile" Executed="OpenFile" />
+        <CommandBinding Command="Save" CanExecute="CanSaveFile" Executed="SaveFile" />
         <CommandBinding Command="Commands:WindowCommands.ShowInfo" CanExecute="CanShowInfo" Executed="ShowInfo"/>
     </Window.CommandBindings>
     <DockPanel>
