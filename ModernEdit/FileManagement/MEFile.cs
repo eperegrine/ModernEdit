@@ -15,6 +15,8 @@ namespace ModernEdit.FileManagement
         public string Content = "This is an example MEFile";
         public string CompletePath = @"C:\ModernEdit\Test.txt";
 
+        public string NameAndExtension {   get { return Name + Extension; } }
+
         public MEFile (string name, string extension, string content, string completePath)
         {
             Name = name;
