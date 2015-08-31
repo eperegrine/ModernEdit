@@ -12,7 +12,7 @@ namespace ModernEdit.FileManagement
     {
         public static string TextFileFilter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
 
-        public static void SaveFile(MEFile file)
+        public static void SaveFile(ref MEFile file)
         {
             Console.WriteLine(file.HasBeenSaved());
             if (file.HasBeenSaved())
@@ -21,7 +21,22 @@ namespace ModernEdit.FileManagement
             }
             else
             {
-                //FileUtills.SaveFileAs(file);
+                FileUtils.SaveFileAs(ref file);
+            }
+        }
+
+        public static void SaveFileAs(ref MEFile file)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+
+            bool? result = sfd.ShowDialog();
+
+            if (result == true)
+            {
+                file.CompletePath = sfd.FileName;
+                file.Name = Path.GetFileNameWithoutExtension(sfd.SafeFileName);
+                file.Extension = Path.GetExtension(sfd.SafeFileName);
+                FileUtils.SaveFile(ref file);
             }
         }
 

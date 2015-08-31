@@ -59,17 +59,17 @@ namespace ModernEdit
         public void SaveFile (object sender, ExecutedRoutedEventArgs e)
         {
             currentFile.Content = EditBox.Text;
-            FileUtils.SaveFile(currentFile);
+            FileUtils.SaveFile(ref currentFile);
         }
 
-        //Save File Ad
+        //Save File As
 
             //Can check is the same as save file for now
 
         public void SaveFileAs (object sender, ExecutedRoutedEventArgs e)
         {
             currentFile.Content = EditBox.Text;
-            //FileUtils.SaveFileAs(currentFile);
+            FileUtils.SaveFileAs(ref currentFile);
         }
 
         //Open File
